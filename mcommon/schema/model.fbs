@@ -1,0 +1,70 @@
+include "common.fbs";
+include "material.fbs";
+
+namespace MGeo;
+
+enum MeshVersion : ushort 
+{
+    CurrentMeshVersion = 1    // Updated when the mesh format gets broken
+}
+
+enum MeshColors : ushort
+{
+    MaxColors = 8
+}
+
+enum MeshTexCoords : ushort
+{
+    MaxTexCoords = 8
+}
+
+table Mesh
+{
+  BoundingBox:Bounds (id: 0);
+  
+  Vertices:[float] (id: 1);
+  Normals:[float] (id: 2);
+  Tangents:[float] (id: 3);
+  Binormals:[float] (id: 4);
+
+  Colors0:[ubyte] (id: 5);
+  Colors1:[ubyte] (id: 6);
+  Colors2:[ubyte] (id: 7);
+  Colors3:[ubyte] (id: 8);
+  Colors4:[ubyte] (id: 9);
+  Colors5:[ubyte] (id: 10);
+  Colors6:[ubyte] (id: 11);
+  Colors7:[ubyte] (id: 12);
+
+  TexCoords0:[float] (id: 13);
+  TexCoords1:[float] (id: 14);
+  TexCoords2:[float] (id: 15);
+  TexCoords3:[float] (id: 16);
+  TexCoords4:[float] (id: 17);
+  TexCoords5:[float] (id: 18);
+  TexCoords6:[float] (id: 19);
+  TexCoords7:[float] (id: 20);
+
+  Indices:[uint] (id: 21);
+  
+  BoneIndices:[ubyte] (id: 22);
+  BoneWeights:[ubyte] (id: 23);
+  BoneTransforms:[float] (id: 24);
+  BoneParents:[ubyte] (id:25);
+
+  MaterialIndex:uint (id:26);
+
+  TexCoord_Dimension:uint = 2 (id: 27);
+}
+
+table Model
+{
+    Version:MeshVersion = CurrentMeshVersion (id: 0);
+    Meshes:[Mesh] (id: 1);
+    Materials:[Material] (id: 2);
+    BoundingBox:Bounds (id: 3);
+}
+
+root_type Model;
+file_identifier "MMBN";
+file_extension "mmesh";

@@ -1,0 +1,26 @@
+include "common.fbs";
+
+namespace MGeo;
+
+table Material
+{
+    Name:string (id: 0);
+    Diffuse:vec3 (id : 1);
+    Specular:vec4 (id : 2);
+    Ambient:vec3 (id : 3);
+    Emissive:vec3 (id : 4);
+    Transparent:vec3 (id : 5);
+    Opacity:float (id : 6);
+    SpecularStrength:float (id : 7); // multiplier on top of specular color
+
+    DiffuseTex:string (id: 8);
+    SpecularTex:string (id: 9);
+    EmissiveTex:string (id: 10);
+    NormalTex:string (id: 11);
+    LightMapTex:string (id: 12);
+    ReflectionTex:string (id: 13);
+    HeightTex:string (id: 14);
+    ShinyTex:string (id: 15);
+    AmbientTex:string (id: 16);
+    DisplacementTex:string (id: 17);
+}

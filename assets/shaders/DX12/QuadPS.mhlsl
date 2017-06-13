@@ -1,0 +1,16 @@
+// Take in a diffuse color map 
+texture2D albedo_tex;
+SamplerState albedo_sampler;
+ 
+float4 QuadPS(float4 pos : SV_Position,
+                float2 frag_tex_coord : TEXCOORD0,
+                float4 frag_color : COLOR0) : SV_Target
+{
+    // Sample the diffuse map
+    float4 diffuse = frag_color * albedo_tex.Sample(albedo_sampler, frag_tex_coord).rgba;
+    if (diffuse.a == 0.0f)
+    {
+        discard;
+    }
+    return diffuse;
+}

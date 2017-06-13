@@ -1,0 +1,130 @@
+#include "MeshRS.hlsli"
+
+cbuffer PixelConstants : register(b0)
+{
+    float4 camera_pos;
+    float4 light_dir;
+    int has_normalmap;
+}
+
+// Take in a diffuse color map and a normal map
+Texture2D<float4> DiffuseTex : register( t0 );
+Texture2D<float3> NormalTex : register( t1 );
+
+SamplerState DefaultSampler : register( s0 );
+
+// The camera position, light direction and if we have a normal map
+// These values passed through from the vertex shader
+
+struct PS_INPUT
+{
+    float4 position : SV_Position;
+    float3 frag_normal : NORMAL;
+    float2 frag_tex_coord : TEXCOORD0;
+    float3 frag_pos_world : TEXCOORD1;
+};
+
+//http://www.thetenthplanet.de/archives/1180
+float3x3 cotangent_frame( float3 N, float3 p, float2 uv )
+{
+    // get edge vectors of the pixel triangle
+    float3 dp1 = ddx( p );
+    float3 dp2 = ddy( p );
+    float2 duv1 = ddx( uv );
+    float2 duv2 = ddy( uv );
+ 
+    // solve the linear system
+    float3 dp2perp = cross( dp2, N );
+    float3 dp1perp = cross( N, dp1 );
+    float3 T = dp2perp * duv1.x + dp1perp * duv2.x;
+    float3 B = dp2perp * duv1.y + dp1perp * duv2.y;
+
+    // Left hand coordinate system, negate T&B 
+     T = -T;
+     B = -B;
+    // construct a scale-invariant frame 
+    float invmax = rsqrt( max( dot(T,T), dot(B,B) ) );
+    return float3x3( T * invmax, B * invmax, N );
+}
+
+float3 perturb_normal( float3 N, float3 V, float2 texcoord )
+{
+    // assume N, the interpolated vertex normal and 
+    // V, the view vector (vertex to eye)
+    float3 map = NormalTex.Sample(DefaultSampler, texcoord).xyz * 2.0f - 1.0f;
+    float3x3 TBN = cotangent_frame( N, -V, texcoord );
+    return normalize( mul(TBN, map) );
+}
+
+float3 RemoveSRGBCurve( float3 x )
+{
+    return pow(x, float3(2.2, 2.2, 2.2));
+}
+
+// A simple ambient light factor; easy lighting.
+static const float3 SkyDirection = float3(0.0f,1.0f,0.0f);
+static const float4 Gc = float4(0.05f,.05f,0.05f,1.0f);
+static const float4 Sc = float4(0.95f,0.95f,1.0f,1.0f);
+static const float Hi = .5f;
+float3 SkyAmbient(float3 N)
+{
+    float vecHemi = (dot(N, SkyDirection) * 0.5f ) + 0.5f;
+    return (Hi * lerp(Gc, Sc, vecHemi)).rgb;
+}
+
+[RootSignature(Mesh_RootSig)]
+float4 MeshPS(PS_INPUT input) : SV_Target
+{
+    // Sample the diffuse map
+    float4 diffuse = DiffuseTex.Sample(DefaultSampler, input.frag_tex_coord).rgba;
+    if (diffuse.a == 0)
+    {
+        discard;
+    }
+
+    // Sample the normal map
+    float3 normal;
+    if (has_normalmap != 0)
+    {
+        normal = perturb_normal(input.frag_normal, camera_pos - input.frag_pos_world, input.frag_tex_coord);
+    }
+    else
+    {
+        normal = input.frag_normal;
+    }
+
+    // Do a simple ambient light calculation
+    float3 illuminance = diffuse.rgb * SkyAmbient(input.frag_normal);
+
+    // Implement a 'highlight' spotlight facing away from the viewer
+    float3 light_pos = camera_pos;
+
+    // Light vector.
+    float3 L = light_pos - input.frag_pos_world;
+    
+    // Normalize light vector.
+    L = normalize(L);
+
+    // cone fall-off 
+    float cosDir = max(dot(L, -light_dir), 0.0f);
+    float spotEffect = pow(cosDir, 20) * .45f; 
+   
+    // Brightness 
+    float lambertian = max(dot(L, normal), 0.0);
+    if(lambertian > 0.0)
+    {
+        // Specular
+        float3 viewDir = normalize(camera_pos - input.frag_pos_world);
+        float3 halfDir = normalize(L + viewDir);
+        float specAngle = max(dot(halfDir, normal), 0.0);
+        float specular = pow(specAngle, 36.0) * .8f;  
+
+        // Final lighting calculation: diffuse + specular
+        illuminance += spotEffect * (lambertian * diffuse.rgb);
+        illuminance += spotEffect * specular;
+    }
+
+   float4 color = float4(illuminance, diffuse.a);
+
+   return color;
+}

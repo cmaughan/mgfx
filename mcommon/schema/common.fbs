@@ -1,0 +1,75 @@
+native_include "glm/glm.hpp"
+
+namespace MGeo;
+
+struct ivec2 
+{
+  x:int;
+  y:int;
+}
+
+struct ivec3
+{
+  x:int;
+  y:int;
+  z:int;
+}
+
+struct ivec4 
+{
+  x:int;
+  y:int;
+  z:int;
+  w:int;
+}
+
+struct vec2 
+{
+  x:float;
+  y:float;
+}
+
+struct vec3 
+{
+  x:float;
+  y:float;
+  z:float;
+}
+
+struct vec4
+{
+  x:float;
+  y:float;
+  z:float;
+  w:float;
+}
+
+struct u8vec4
+{
+  x:ubyte;
+  y:ubyte;
+  z:ubyte;
+  w:ubyte;
+}
+
+struct mat4
+{
+  c0:vec4;
+  c1:vec4;
+  c2:vec4;
+  c3:vec4;
+}
+
+struct Color
+{
+  r:float = 1.0;
+  g:float = 1.0;
+  b:float = 1.0;
+  a:float = 1.0;
+}
+
+struct Bounds
+{
+    min:vec3;
+    max:vec3;
+}

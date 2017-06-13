@@ -1,0 +1,22 @@
+
+float4x4 Projection;
+
+// Outputs to the pixel shader
+struct VertexOut
+{
+    float4 position : SV_Position;
+    float2 frag_tex_coord : TEXCOORD0;
+    float4 frag_color : COLOR0;
+};
+
+VertexOut QuadVS(float3 in_position : POSITION,
+            float2 in_tex_coord : TEXCOORD0,
+            float4 in_color : COLOR0)
+{
+    VertexOut OUT;
+    
+    OUT.position = mul(Projection, float4(in_position.x, in_position.y, in_position.z, 1.0));
+    OUT.frag_tex_coord = in_tex_coord;
+    OUT.frag_color = in_color;
+    return OUT;
+}

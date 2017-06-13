@@ -1,0 +1,2065 @@
+{
+  "TextureAtlas": {
+    "imagePath": "shooter_sprites.png",
+    "SubTexture": [
+      {
+        "name": "beam0",
+        "x": "143",
+        "y": "377",
+        "width": "43",
+        "height": "31"
+      },
+      {
+        "name": "beam1",
+        "x": "327",
+        "y": "644",
+        "width": "40",
+        "height": "20"
+      },
+      {
+        "name": "beam2",
+        "x": "262",
+        "y": "907",
+        "width": "38",
+        "height": "31"
+      },
+      {
+        "name": "beam3",
+        "x": "396",
+        "y": "384",
+        "width": "29",
+        "height": "29"
+      },
+      {
+        "name": "beam4",
+        "x": "177",
+        "y": "496",
+        "width": "41",
+        "height": "17"
+      },
+      {
+        "name": "beam5",
+        "x": "186",
+        "y": "377",
+        "width": "40",
+        "height": "25"
+      },
+      {
+        "name": "beam6",
+        "x": "120",
+        "y": "688",
+        "width": "43",
+        "height": "23"
+      },
+      {
+        "name": "beamLong1",
+        "x": "828",
+        "y": "943",
+        "width": "15",
+        "height": "67"
+      },
+      {
+        "name": "beamLong2",
+        "x": "307",
+        "y": "309",
+        "width": "25",
+        "height": "64"
+      },
+      {
+        "name": "bold_silver",
+        "x": "810",
+        "y": "837",
+        "width": "19",
+        "height": "30"
+      },
+      {
+        "name": "bolt_bronze",
+        "x": "810",
+        "y": "467",
+        "width": "19",
+        "height": "30"
+      },
+      {
+        "name": "bolt_gold",
+        "x": "809",
+        "y": "437",
+        "width": "19",
+        "height": "30"
+      },
+      {
+        "name": "buttonBlue",
+        "x": "0",
+        "y": "78",
+        "width": "222",
+        "height": "39"
+      },
+      {
+        "name": "buttonGreen",
+        "x": "0",
+        "y": "117",
+        "width": "222",
+        "height": "39"
+      },
+      {
+        "name": "buttonRed",
+        "x": "0",
+        "y": "0",
+        "width": "222",
+        "height": "39"
+      },
+      {
+        "name": "buttonYellow",
+        "x": "0",
+        "y": "39",
+        "width": "222",
+        "height": "39"
+      },
+      {
+        "name": "cockpitBlue_0",
+        "x": "586",
+        "y": "0",
+        "width": "51",
+        "height": "75"
+      },
+      {
+        "name": "cockpitBlue_1",
+        "x": "736",
+        "y": "862",
+        "width": "40",
+        "height": "40"
+      },
+      {
+        "name": "cockpitBlue_2",
+        "x": "684",
+        "y": "67",
+        "width": "42",
+        "height": "56"
+      },
+      {
+        "name": "cockpitBlue_3",
+        "x": "336",
+        "y": "384",
+        "width": "60",
+        "height": "61"
+      },
+      {
+        "name": "cockpitBlue_4",
+        "x": "637",
+        "y": "0",
+        "width": "47",
+        "height": "67"
+      },
+      {
+        "name": "cockpitBlue_5",
+        "x": "627",
+        "y": "144",
+        "width": "48",
+        "height": "75"
+      },
+      {
+        "name": "cockpitBlue_6",
+        "x": "684",
+        "y": "0",
+        "width": "42",
+        "height": "67"
+      },
+      {
+        "name": "cockpitBlue_7",
+        "x": "737",
+        "y": "542",
+        "width": "41",
+        "height": "71"
+      },
+      {
+        "name": "cockpitGreen_0",
+        "x": "576",
+        "y": "225",
+        "width": "51",
+        "height": "75"
+      },
+      {
+        "name": "cockpitGreen_1",
+        "x": "734",
+        "y": "977",
+        "width": "40",
+        "height": "40"
+      },
+      {
+        "name": "cockpitGreen_2",
+        "x": "696",
+        "y": "659",
+        "width": "42",
+        "height": "56"
+      },
+      {
+        "name": "cockpitGreen_3",
+        "x": "346",
+        "y": "234",
+        "width": "60",
+        "height": "61"
+      },
+      {
+        "name": "cockpitGreen_4",
+        "x": "627",
+        "y": "219",
+        "width": "47",
+        "height": "67"
+      },
+      {
+        "name": "cockpitGreen_5",
+        "x": "694",
+        "y": "364",
+        "width": "42",
+        "height": "67"
+      },
+      {
+        "name": "cockpitGreen_6",
+        "x": "737",
+        "y": "471",
+        "width": "41",
+        "height": "71"
+      },
+      {
+        "name": "cockpitGreen_7",
+        "x": "602",
+        "y": "525",
+        "width": "48",
+        "height": "75"
+      },
+      {
+        "name": "cockpitRed_0",
+        "x": "535",
+        "y": "75",
+        "width": "51",
+        "height": "75"
+      },
+      {
+        "name": "cockpitRed_1",
+        "x": "351",
+        "y": "982",
+        "width": "40",
+        "height": "40"
+      },
+      {
+        "name": "cockpitRed_2",
+        "x": "718",
+        "y": "197",
+        "width": "42",
+        "height": "56"
+      },
+      {
+        "name": "cockpitRed_3",
+        "x": "520",
+        "y": "661",
+        "width": "60",
+        "height": "61"
+      },
+      {
+        "name": "cockpitRed_4",
+        "x": "647",
+        "y": "857",
+        "width": "47",
+        "height": "67"
+      },
+      {
+        "name": "cockpitRed_5",
+        "x": "605",
+        "y": "707",
+        "width": "48",
+        "height": "75"
+      },
+      {
+        "name": "cockpitRed_6",
+        "x": "736",
+        "y": "795",
+        "width": "42",
+        "height": "67"
+      },
+      {
+        "name": "cockpitRed_7",
+        "x": "736",
+        "y": "329",
+        "width": "41",
+        "height": "71"
+      },
+      {
+        "name": "cockpitYellow_0",
+        "x": "726",
+        "y": "80",
+        "width": "40",
+        "height": "40"
+      },
+      {
+        "name": "cockpitYellow_1",
+        "x": "247",
+        "y": "309",
+        "width": "60",
+        "height": "61"
+      },
+      {
+        "name": "cockpitYellow_2",
+        "x": "637",
+        "y": "67",
+        "width": "47",
+        "height": "67"
+      },
+      {
+        "name": "cockpitYellow_3",
+        "x": "607",
+        "y": "782",
+        "width": "48",
+        "height": "75"
+      },
+      {
+        "name": "cockpitYellow_4",
+        "x": "696",
+        "y": "262",
+        "width": "42",
+        "height": "67"
+      },
+      {
+        "name": "cockpitYellow_5",
+        "x": "736",
+        "y": "400",
+        "width": "41",
+        "height": "71"
+      },
+      {
+        "name": "cockpitYellow_6",
+        "x": "734",
+        "y": "921",
+        "width": "42",
+        "height": "56"
+      },
+      {
+        "name": "cockpitYellow_7",
+        "x": "600",
+        "y": "375",
+        "width": "51",
+        "height": "75"
+      },
+      {
+        "name": "cursor",
+        "x": "797",
+        "y": "173",
+        "width": "30",
+        "height": "33"
+      },
+      {
+        "name": "enemyBlack1",
+        "x": "423",
+        "y": "728",
+        "width": "93",
+        "height": "84"
+      },
+      {
+        "name": "enemyBlack2",
+        "x": "120",
+        "y": "604",
+        "width": "104",
+        "height": "84"
+      },
+      {
+        "name": "enemyBlack3",
+        "x": "144",
+        "y": "156",
+        "width": "103",
+        "height": "84"
+      },
+      {
+        "name": "enemyBlack4",
+        "x": "518",
+        "y": "325",
+        "width": "82",
+        "height": "84"
+      },
+      {
+        "name": "enemyBlack5",
+        "x": "346",
+        "y": "150",
+        "width": "97",
+        "height": "84"
+      },
+      {
+        "name": "enemyBlue1",
+        "x": "425",
+        "y": "468",
+        "width": "93",
+        "height": "84"
+      },
+      {
+        "name": "enemyBlue2",
+        "x": "143",
+        "y": "293",
+        "width": "104",
+        "height": "84"
+      },
+      {
+        "name": "enemyBlue3",
+        "x": "222",
+        "y": "0",
+        "width": "103",
+        "height": "84"
+      },
+      {
+        "name": "enemyBlue4",
+        "x": "518",
+        "y": "409",
+        "width": "82",
+        "height": "84"
+      },
+      {
+        "name": "enemyBlue5",
+        "x": "421",
+        "y": "814",
+        "width": "97",
+        "height": "84"
+      },
+      {
+        "name": "enemyGreen1",
+        "x": "425",
+        "y": "552",
+        "width": "93",
+        "height": "84"
+      },
+      {
+        "name": "enemyGreen2",
+        "x": "133",
+        "y": "412",
+        "width": "104",
+        "height": "84"
+      },
+      {
+        "name": "enemyGreen3",
+        "x": "224",
+        "y": "496",
+        "width": "103",
+        "height": "84"
+      },
+      {
+        "name": "enemyGreen4",
+        "x": "518",
+        "y": "493",
+        "width": "82",
+        "height": "84"
+      },
+      {
+        "name": "enemyGreen5",
+        "x": "408",
+        "y": "907",
+        "width": "97",
+        "height": "84"
+      },
+      {
+        "name": "enemyRed1",
+        "x": "425",
+        "y": "384",
+        "width": "93",
+        "height": "84"
+      },
+      {
+        "name": "enemyRed2",
+        "x": "120",
+        "y": "520",
+        "width": "104",
+        "height": "84"
+      },
+      {
+        "name": "enemyRed3",
+        "x": "224",
+        "y": "580",
+        "width": "103",
+        "height": "84"
+      },
+      {
+        "name": "enemyRed4",
+        "x": "520",
+        "y": "577",
+        "width": "82",
+        "height": "84"
+      },
+      {
+        "name": "enemyRed5",
+        "x": "423",
+        "y": "644",
+        "width": "97",
+        "height": "84"
+      },
+      {
+        "name": "engine1",
+        "x": "224",
+        "y": "907",
+        "width": "38",
+        "height": "23"
+      },
+      {
+        "name": "engine2",
+        "x": "163",
+        "y": "688",
+        "width": "42",
+        "height": "28"
+      },
+      {
+        "name": "engine3",
+        "x": "644",
+        "y": "1002",
+        "width": "27",
+        "height": "22"
+      },
+      {
+        "name": "engine4",
+        "x": "144",
+        "y": "240",
+        "width": "49",
+        "height": "45"
+      },
+      {
+        "name": "engine5",
+        "x": "133",
+        "y": "496",
+        "width": "44",
+        "height": "24"
+      },
+      {
+        "name": "fire00",
+        "x": "827",
+        "y": "125",
+        "width": "16",
+        "height": "40"
+      },
+      {
+        "name": "fire01",
+        "x": "828",
+        "y": "206",
+        "width": "14",
+        "height": "31"
+      },
+      {
+        "name": "fire02",
+        "x": "827",
+        "y": "663",
+        "width": "14",
+        "height": "32"
+      },
+      {
+        "name": "fire03",
+        "x": "829",
+        "y": "437",
+        "width": "14",
+        "height": "34"
+      },
+      {
+        "name": "fire04",
+        "x": "831",
+        "y": "0",
+        "width": "14",
+        "height": "31"
+      },
+      {
+        "name": "fire05",
+        "x": "834",
+        "y": "299",
+        "width": "14",
+        "height": "31"
+      },
+      {
+        "name": "fire06",
+        "x": "835",
+        "y": "502",
+        "width": "14",
+        "height": "31"
+      },
+      {
+        "name": "fire07",
+        "x": "835",
+        "y": "330",
+        "width": "14",
+        "height": "31"
+      },
+      {
+        "name": "fire08",
+        "x": "827",
+        "y": "867",
+        "width": "16",
+        "height": "40"
+      },
+      {
+        "name": "fire09",
+        "x": "811",
+        "y": "663",
+        "width": "16",
+        "height": "40"
+      },
+      {
+        "name": "fire10",
+        "x": "812",
+        "y": "206",
+        "width": "16",
+        "height": "40"
+      },
+      {
+        "name": "fire11",
+        "x": "835",
+        "y": "395",
+        "width": "14",
+        "height": "31"
+      },
+      {
+        "name": "fire12",
+        "x": "835",
+        "y": "533",
+        "width": "14",
+        "height": "32"
+      },
+      {
+        "name": "fire13",
+        "x": "835",
+        "y": "361",
+        "width": "14",
+        "height": "34"
+      },
+      {
+        "name": "fire14",
+        "x": "831",
+        "y": "31",
+        "width": "14",
+        "height": "31"
+      },
+      {
+        "name": "fire15",
+        "x": "829",
+        "y": "471",
+        "width": "14",
+        "height": "31"
+      },
+      {
+        "name": "fire16",
+        "x": "828",
+        "y": "268",
+        "width": "14",
+        "height": "31"
+      },
+      {
+        "name": "fire17",
+        "x": "828",
+        "y": "237",
+        "width": "14",
+        "height": "31"
+      },
+      {
+        "name": "fire18",
+        "x": "827",
+        "y": "165",
+        "width": "16",
+        "height": "41"
+      },
+      {
+        "name": "fire19",
+        "x": "812",
+        "y": "246",
+        "width": "16",
+        "height": "41"
+      },
+      {
+        "name": "gun00",
+        "x": "827",
+        "y": "907",
+        "width": "16",
+        "height": "36"
+      },
+      {
+        "name": "gun01",
+        "x": "810",
+        "y": "867",
+        "width": "17",
+        "height": "33"
+      },
+      {
+        "name": "gun02",
+        "x": "829",
+        "y": "611",
+        "width": "14",
+        "height": "36"
+      },
+      {
+        "name": "gun03",
+        "x": "809",
+        "y": "796",
+        "width": "20",
+        "height": "41"
+      },
+      {
+        "name": "gun04",
+        "x": "827",
+        "y": "84",
+        "width": "16",
+        "height": "41"
+      },
+      {
+        "name": "gun05",
+        "x": "423",
+        "y": "0",
+        "width": "21",
+        "height": "41"
+      },
+      {
+        "name": "gun06",
+        "x": "810",
+        "y": "900",
+        "width": "17",
+        "height": "38"
+      },
+      {
+        "name": "gun07",
+        "x": "829",
+        "y": "796",
+        "width": "14",
+        "height": "41"
+      },
+      {
+        "name": "gun08",
+        "x": "848",
+        "y": "263",
+        "width": "10",
+        "height": "47"
+      },
+      {
+        "name": "gun09",
+        "x": "809",
+        "y": "611",
+        "width": "20",
+        "height": "52"
+      },
+      {
+        "name": "gun10",
+        "x": "808",
+        "y": "961",
+        "width": "20",
+        "height": "52"
+      },
+      {
+        "name": "laserBlue01",
+        "x": "856",
+        "y": "421",
+        "width": "9",
+        "height": "54"
+      },
+      {
+        "name": "laserBlue02",
+        "x": "841",
+        "y": "647",
+        "width": "13",
+        "height": "37"
+      },
+      {
+        "name": "laserBlue03",
+        "x": "856",
+        "y": "57",
+        "width": "9",
+        "height": "37"
+      },
+      {
+        "name": "laserBlue04",
+        "x": "835",
+        "y": "565",
+        "width": "13",
+        "height": "37"
+      },
+      {
+        "name": "laserBlue05",
+        "x": "858",
+        "y": "475",
+        "width": "9",
+        "height": "37"
+      },
+      {
+        "name": "laserBlue06",
+        "x": "835",
+        "y": "752",
+        "width": "13",
+        "height": "37"
+      },
+      {
+        "name": "laserBlue07",
+        "x": "856",
+        "y": "775",
+        "width": "9",
+        "height": "37"
+      },
+      {
+        "name": "laserBlue08",
+        "x": "596",
+        "y": "961",
+        "width": "48",
+        "height": "46"
+      },
+      {
+        "name": "laserBlue09",
+        "x": "434",
+        "y": "325",
+        "width": "48",
+        "height": "46"
+      },
+      {
+        "name": "laserBlue10",
+        "x": "740",
+        "y": "724",
+        "width": "37",
+        "height": "37"
+      },
+      {
+        "name": "laserBlue11",
+        "x": "698",
+        "y": "795",
+        "width": "38",
+        "height": "37"
+      },
+      {
+        "name": "laserBlue12",
+        "x": "835",
+        "y": "695",
+        "width": "13",
+        "height": "57"
+      },
+      {
+        "name": "laserBlue13",
+        "x": "856",
+        "y": "869",
+        "width": "9",
+        "height": "57"
+      },
+      {
+        "name": "laserBlue14",
+        "x": "842",
+        "y": "206",
+        "width": "13",
+        "height": "57"
+      },
+      {
+        "name": "laserBlue15",
+        "x": "849",
+        "y": "480",
+        "width": "9",
+        "height": "57"
+      },
+      {
+        "name": "laserBlue16",
+        "x": "843",
+        "y": "62",
+        "width": "13",
+        "height": "54"
+      },
+      {
+        "name": "laserGreen01",
+        "x": "740",
+        "y": "686",
+        "width": "37",
+        "height": "38"
+      },
+      {
+        "name": "laserGreen02",
+        "x": "843",
+        "y": "116",
+        "width": "13",
+        "height": "57"
+      },
+      {
+        "name": "laserGreen03",
+        "x": "855",
+        "y": "173",
+        "width": "9",
+        "height": "57"
+      },
+      {
+        "name": "laserGreen04",
+        "x": "848",
+        "y": "565",
+        "width": "13",
+        "height": "37"
+      },
+      {
+        "name": "laserGreen05",
+        "x": "854",
+        "y": "639",
+        "width": "9",
+        "height": "37"
+      },
+      {
+        "name": "laserGreen06",
+        "x": "845",
+        "y": "0",
+        "width": "13",
+        "height": "57"
+      },
+      {
+        "name": "laserGreen07",
+        "x": "849",
+        "y": "364",
+        "width": "9",
+        "height": "57"
+      },
+      {
+        "name": "laserGreen08",
+        "x": "848",
+        "y": "738",
+        "width": "13",
+        "height": "37"
+      },
+      {
+        "name": "laserGreen09",
+        "x": "856",
+        "y": "94",
+        "width": "9",
+        "height": "37"
+      },
+      {
+        "name": "laserGreen10",
+        "x": "843",
+        "y": "426",
+        "width": "13",
+        "height": "54"
+      },
+      {
+        "name": "laserGreen11",
+        "x": "849",
+        "y": "310",
+        "width": "9",
+        "height": "54"
+      },
+      {
+        "name": "laserGreen12",
+        "x": "843",
+        "y": "602",
+        "width": "13",
+        "height": "37"
+      },
+      {
+        "name": "laserGreen13",
+        "x": "858",
+        "y": "0",
+        "width": "9",
+        "height": "37"
+      },
+      {
+        "name": "laserGreen14",
+        "x": "193",
+        "y": "240",
+        "width": "48",
+        "height": "46"
+      },
+      {
+        "name": "laserGreen15",
+        "x": "443",
+        "y": "182",
+        "width": "48",
+        "height": "46"
+      },
+      {
+        "name": "laserGreen16",
+        "x": "760",
+        "y": "192",
+        "width": "37",
+        "height": "37"
+      },
+      {
+        "name": "laserRed01",
+        "x": "858",
+        "y": "230",
+        "width": "9",
+        "height": "54"
+      },
+      {
+        "name": "laserRed02",
+        "x": "843",
+        "y": "977",
+        "width": "13",
+        "height": "37"
+      },
+      {
+        "name": "laserRed03",
+        "x": "856",
+        "y": "602",
+        "width": "9",
+        "height": "37"
+      },
+      {
+        "name": "laserRed04",
+        "x": "843",
+        "y": "940",
+        "width": "13",
+        "height": "37"
+      },
+      {
+        "name": "laserRed05",
+        "x": "856",
+        "y": "983",
+        "width": "9",
+        "height": "37"
+      },
+      {
+        "name": "laserRed06",
+        "x": "843",
+        "y": "903",
+        "width": "13",
+        "height": "37"
+      },
+      {
+        "name": "laserRed07",
+        "x": "856",
+        "y": "131",
+        "width": "9",
+        "height": "37"
+      },
+      {
+        "name": "laserRed08",
+        "x": "580",
+        "y": "661",
+        "width": "48",
+        "height": "46"
+      },
+      {
+        "name": "laserRed09",
+        "x": "602",
+        "y": "600",
+        "width": "48",
+        "height": "46"
+      },
+      {
+        "name": "laserRed10",
+        "x": "738",
+        "y": "650",
+        "width": "37",
+        "height": "36"
+      },
+      {
+        "name": "laserRed11",
+        "x": "737",
+        "y": "613",
+        "width": "37",
+        "height": "37"
+      },
+      {
+        "name": "laserRed12",
+        "x": "843",
+        "y": "846",
+        "width": "13",
+        "height": "57"
+      },
+      {
+        "name": "laserRed13",
+        "x": "856",
+        "y": "812",
+        "width": "9",
+        "height": "57"
+      },
+      {
+        "name": "laserRed14",
+        "x": "843",
+        "y": "789",
+        "width": "13",
+        "height": "57"
+      },
+      {
+        "name": "laserRed15",
+        "x": "856",
+        "y": "926",
+        "width": "9",
+        "height": "57"
+      },
+      {
+        "name": "laserRed16",
+        "x": "848",
+        "y": "684",
+        "width": "13",
+        "height": "54"
+      },
+      {
+        "name": "meteorBrown_big1",
+        "x": "224",
+        "y": "664",
+        "width": "101",
+        "height": "84"
+      },
+      {
+        "name": "meteorBrown_big2",
+        "x": "0",
+        "y": "520",
+        "width": "120",
+        "height": "98"
+      },
+      {
+        "name": "meteorBrown_big3",
+        "x": "518",
+        "y": "810",
+        "width": "89",
+        "height": "82"
+      },
+      {
+        "name": "meteorBrown_big4",
+        "x": "327",
+        "y": "452",
+        "width": "98",
+        "height": "96"
+      },
+      {
+        "name": "meteorBrown_med1",
+        "x": "651",
+        "y": "447",
+        "width": "43",
+        "height": "43"
+      },
+      {
+        "name": "meteorBrown_med3",
+        "x": "237",
+        "y": "452",
+        "width": "45",
+        "height": "40"
+      },
+      {
+        "name": "meteorBrown_small1",
+        "x": "406",
+        "y": "234",
+        "width": "28",
+        "height": "28"
+      },
+      {
+        "name": "meteorBrown_small2",
+        "x": "778",
+        "y": "587",
+        "width": "29",
+        "height": "26"
+      },
+      {
+        "name": "meteorBrown_tiny1",
+        "x": "346",
+        "y": "814",
+        "width": "18",
+        "height": "18"
+      },
+      {
+        "name": "meteorBrown_tiny2",
+        "x": "399",
+        "y": "814",
+        "width": "16",
+        "height": "15"
+      },
+      {
+        "name": "meteorGrey_big1",
+        "x": "224",
+        "y": "748",
+        "width": "101",
+        "height": "84"
+      },
+      {
+        "name": "meteorGrey_big2",
+        "x": "0",
+        "y": "618",
+        "width": "120",
+        "height": "98"
+      },
+      {
+        "name": "meteorGrey_big3",
+        "x": "516",
+        "y": "728",
+        "width": "89",
+        "height": "82"
+      },
+      {
+        "name": "meteorGrey_big4",
+        "x": "327",
+        "y": "548",
+        "width": "98",
+        "height": "96"
+      },
+      {
+        "name": "meteorGrey_med1",
+        "x": "674",
+        "y": "219",
+        "width": "43",
+        "height": "43"
+      },
+      {
+        "name": "meteorGrey_med2",
+        "x": "282",
+        "y": "452",
+        "width": "45",
+        "height": "40"
+      },
+      {
+        "name": "meteorGrey_small1",
+        "x": "406",
+        "y": "262",
+        "width": "28",
+        "height": "28"
+      },
+      {
+        "name": "meteorGrey_small2",
+        "x": "396",
+        "y": "413",
+        "width": "29",
+        "height": "26"
+      },
+      {
+        "name": "meteorGrey_tiny1",
+        "x": "364",
+        "y": "814",
+        "width": "18",
+        "height": "18"
+      },
+      {
+        "name": "meteorGrey_tiny2",
+        "x": "602",
+        "y": "646",
+        "width": "16",
+        "height": "15"
+      },
+      {
+        "name": "numeral0",
+        "x": "367",
+        "y": "644",
+        "width": "19",
+        "height": "19"
+      },
+      {
+        "name": "numeral1",
+        "x": "205",
+        "y": "688",
+        "width": "19",
+        "height": "19"
+      },
+      {
+        "name": "numeral2",
+        "x": "406",
+        "y": "290",
+        "width": "19",
+        "height": "19"
+      },
+      {
+        "name": "numeral3",
+        "x": "580",
+        "y": "707",
+        "width": "19",
+        "height": "19"
+      },
+      {
+        "name": "numeral4",
+        "x": "386",
+        "y": "644",
+        "width": "19",
+        "height": "19"
+      },
+      {
+        "name": "numeral5",
+        "x": "628",
+        "y": "646",
+        "width": "19",
+        "height": "19"
+      },
+      {
+        "name": "numeral6",
+        "x": "671",
+        "y": "1002",
+        "width": "19",
+        "height": "19"
+      },
+      {
+        "name": "numeral7",
+        "x": "690",
+        "y": "1004",
+        "width": "19",
+        "height": "19"
+      },
+      {
+        "name": "numeral8",
+        "x": "709",
+        "y": "1004",
+        "width": "19",
+        "height": "19"
+      },
+      {
+        "name": "numeral9",
+        "x": "491",
+        "y": "215",
+        "width": "19",
+        "height": "19"
+      },
+      {
+        "name": "numeralX",
+        "x": "382",
+        "y": "814",
+        "width": "17",
+        "height": "17"
+      },
+      {
+        "name": "pill_blue",
+        "x": "674",
+        "y": "262",
+        "width": "22",
+        "height": "21"
+      },
+      {
+        "name": "pill_green",
+        "x": "573",
+        "y": "989",
+        "width": "22",
+        "height": "21"
+      },
+      {
+        "name": "pill_red",
+        "x": "222",
+        "y": "108",
+        "width": "22",
+        "height": "21"
+      },
+      {
+        "name": "pill_yellow",
+        "x": "222",
+        "y": "129",
+        "width": "22",
+        "height": "21"
+      },
+      {
+        "name": "playerLife1_blue",
+        "x": "482",
+        "y": "358",
+        "width": "33",
+        "height": "26"
+      },
+      {
+        "name": "playerLife1_green",
+        "x": "535",
+        "y": "150",
+        "width": "33",
+        "height": "26"
+      },
+      {
+        "name": "playerLife1_orange",
+        "x": "777",
+        "y": "327",
+        "width": "33",
+        "height": "26"
+      },
+      {
+        "name": "playerLife1_red",
+        "x": "775",
+        "y": "301",
+        "width": "33",
+        "height": "26"
+      },
+      {
+        "name": "playerLife2_blue",
+        "x": "465",
+        "y": "991",
+        "width": "37",
+        "height": "26"
+      },
+      {
+        "name": "playerLife2_green",
+        "x": "391",
+        "y": "991",
+        "width": "37",
+        "height": "26"
+      },
+      {
+        "name": "playerLife2_orange",
+        "x": "428",
+        "y": "991",
+        "width": "37",
+        "height": "26"
+      },
+      {
+        "name": "playerLife2_red",
+        "x": "502",
+        "y": "991",
+        "width": "37",
+        "height": "26"
+      },
+      {
+        "name": "playerLife3_blue",
+        "x": "777",
+        "y": "385",
+        "width": "32",
+        "height": "26"
+      },
+      {
+        "name": "playerLife3_green",
+        "x": "778",
+        "y": "469",
+        "width": "32",
+        "height": "26"
+      },
+      {
+        "name": "playerLife3_orange",
+        "x": "777",
+        "y": "712",
+        "width": "32",
+        "height": "26"
+      },
+      {
+        "name": "playerLife3_red",
+        "x": "777",
+        "y": "443",
+        "width": "32",
+        "height": "26"
+      },
+      {
+        "name": "playerShip1_blue",
+        "x": "211",
+        "y": "941",
+        "width": "99",
+        "height": "75"
+      },
+      {
+        "name": "playerShip1_damage1",
+        "x": "112",
+        "y": "941",
+        "width": "99",
+        "height": "75"
+      },
+      {
+        "name": "playerShip1_damage2",
+        "x": "247",
+        "y": "234",
+        "width": "99",
+        "height": "75"
+      },
+      {
+        "name": "playerShip1_damage3",
+        "x": "247",
+        "y": "159",
+        "width": "99",
+        "height": "75"
+      },
+      {
+        "name": "playerShip1_green",
+        "x": "237",
+        "y": "377",
+        "width": "99",
+        "height": "75"
+      },
+      {
+        "name": "playerShip1_orange",
+        "x": "247",
+        "y": "84",
+        "width": "99",
+        "height": "75"
+      },
+      {
+        "name": "playerShip1_red",
+        "x": "224",
+        "y": "832",
+        "width": "99",
+        "height": "75"
+      },
+      {
+        "name": "playerShip2_blue",
+        "x": "112",
+        "y": "791",
+        "width": "112",
+        "height": "75"
+      },
+      {
+        "name": "playerShip2_damage1",
+        "x": "0",
+        "y": "866",
+        "width": "112",
+        "height": "75"
+      },
+      {
+        "name": "playerShip2_damage2",
+        "x": "0",
+        "y": "791",
+        "width": "112",
+        "height": "75"
+      },
+      {
+        "name": "playerShip2_damage3",
+        "x": "0",
+        "y": "716",
+        "width": "112",
+        "height": "75"
+      },
+      {
+        "name": "playerShip2_green",
+        "x": "112",
+        "y": "866",
+        "width": "112",
+        "height": "75"
+      },
+      {
+        "name": "playerShip2_orange",
+        "x": "112",
+        "y": "716",
+        "width": "112",
+        "height": "75"
+      },
+      {
+        "name": "playerShip2_red",
+        "x": "0",
+        "y": "941",
+        "width": "112",
+        "height": "75"
+      },
+      {
+        "name": "playerShip3_blue",
+        "x": "325",
+        "y": "739",
+        "width": "98",
+        "height": "75"
+      },
+      {
+        "name": "playerShip3_damage1",
+        "x": "323",
+        "y": "832",
+        "width": "98",
+        "height": "75"
+      },
+      {
+        "name": "playerShip3_damage2",
+        "x": "310",
+        "y": "907",
+        "width": "98",
+        "height": "75"
+      },
+      {
+        "name": "playerShip3_damage3",
+        "x": "325",
+        "y": "664",
+        "width": "98",
+        "height": "75"
+      },
+      {
+        "name": "playerShip3_green",
+        "x": "346",
+        "y": "75",
+        "width": "98",
+        "height": "75"
+      },
+      {
+        "name": "playerShip3_orange",
+        "x": "336",
+        "y": "309",
+        "width": "98",
+        "height": "75"
+      },
+      {
+        "name": "playerShip3_red",
+        "x": "325",
+        "y": "0",
+        "width": "98",
+        "height": "75"
+      },
+      {
+        "name": "powerupBlue",
+        "x": "696",
+        "y": "329",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupBlue_bolt",
+        "x": "539",
+        "y": "989",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupBlue_shield",
+        "x": "777",
+        "y": "679",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupBlue_star",
+        "x": "776",
+        "y": "895",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupGreen",
+        "x": "774",
+        "y": "613",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupGreen_bolt",
+        "x": "766",
+        "y": "80",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupGreen_shield",
+        "x": "776",
+        "y": "862",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupGreen_star",
+        "x": "651",
+        "y": "490",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupRed",
+        "x": "491",
+        "y": "182",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupRed_bolt",
+        "x": "775",
+        "y": "646",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupRed_shield",
+        "x": "776",
+        "y": "928",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupRed_star",
+        "x": "774",
+        "y": "977",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupYellow",
+        "x": "774",
+        "y": "761",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupYellow_bolt",
+        "x": "740",
+        "y": "761",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupYellow_shield",
+        "x": "482",
+        "y": "325",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "powerupYellow_star",
+        "x": "607",
+        "y": "857",
+        "width": "34",
+        "height": "33"
+      },
+      {
+        "name": "scratch1",
+        "x": "325",
+        "y": "814",
+        "width": "21",
+        "height": "16"
+      },
+      {
+        "name": "scratch2",
+        "x": "423",
+        "y": "41",
+        "width": "21",
+        "height": "16"
+      },
+      {
+        "name": "scratch3",
+        "x": "346",
+        "y": "295",
+        "width": "16",
+        "height": "12"
+      },
+      {
+        "name": "shield1",
+        "x": "0",
+        "y": "412",
+        "width": "133",
+        "height": "108"
+      },
+      {
+        "name": "shield2",
+        "x": "0",
+        "y": "293",
+        "width": "143",
+        "height": "119"
+      },
+      {
+        "name": "shield3",
+        "x": "0",
+        "y": "156",
+        "width": "144",
+        "height": "137"
+      },
+      {
+        "name": "shield_bronze",
+        "x": "797",
+        "y": "143",
+        "width": "30",
+        "height": "30"
+      },
+      {
+        "name": "shield_gold",
+        "x": "797",
+        "y": "113",
+        "width": "30",
+        "height": "30"
+      },
+      {
+        "name": "shield_silver",
+        "x": "778",
+        "y": "824",
+        "width": "30",
+        "height": "30"
+      },
+      {
+        "name": "speed",
+        "x": "858",
+        "y": "284",
+        "width": "7",
+        "height": "108"
+      },
+      {
+        "name": "star1",
+        "x": "628",
+        "y": "681",
+        "width": "25",
+        "height": "24"
+      },
+      {
+        "name": "star2",
+        "x": "222",
+        "y": "84",
+        "width": "25",
+        "height": "24"
+      },
+      {
+        "name": "star3",
+        "x": "576",
+        "y": "300",
+        "width": "24",
+        "height": "24"
+      },
+      {
+        "name": "star_bronze",
+        "x": "778",
+        "y": "794",
+        "width": "31",
+        "height": "30"
+      },
+      {
+        "name": "star_gold",
+        "x": "778",
+        "y": "557",
+        "width": "31",
+        "height": "30"
+      },
+      {
+        "name": "star_silver",
+        "x": "778",
+        "y": "527",
+        "width": "31",
+        "height": "30"
+      },
+      {
+        "name": "things_bronze",
+        "x": "778",
+        "y": "495",
+        "width": "32",
+        "height": "32"
+      },
+      {
+        "name": "things_gold",
+        "x": "777",
+        "y": "411",
+        "width": "32",
+        "height": "32"
+      },
+      {
+        "name": "things_silver",
+        "x": "777",
+        "y": "353",
+        "width": "32",
+        "height": "32"
+      },
+      {
+        "name": "turretBase_big",
+        "x": "310",
+        "y": "982",
+        "width": "41",
+        "height": "41"
+      },
+      {
+        "name": "turretBase_small",
+        "x": "808",
+        "y": "301",
+        "width": "26",
+        "height": "26"
+      },
+      {
+        "name": "ufoBlue",
+        "x": "444",
+        "y": "91",
+        "width": "91",
+        "height": "91"
+      },
+      {
+        "name": "ufoGreen",
+        "x": "434",
+        "y": "234",
+        "width": "91",
+        "height": "91"
+      },
+      {
+        "name": "ufoRed",
+        "x": "444",
+        "y": "0",
+        "width": "91",
+        "height": "91"
+      },
+      {
+        "name": "ufoYellow",
+        "x": "505",
+        "y": "898",
+        "width": "91",
+        "height": "91"
+      },
+      {
+        "name": "wingBlue_0",
+        "x": "647",
+        "y": "924",
+        "width": "45",
+        "height": "78"
+      },
+      {
+        "name": "wingBlue_1",
+        "x": "738",
+        "y": "253",
+        "width": "37",
+        "height": "72"
+      },
+      {
+        "name": "wingBlue_2",
+        "x": "805",
+        "y": "0",
+        "width": "26",
+        "height": "84"
+      },
+      {
+        "name": "wingBlue_3",
+        "x": "600",
+        "y": "450",
+        "width": "51",
+        "height": "75"
+      },
+      {
+        "name": "wingBlue_4",
+        "x": "692",
+        "y": "924",
+        "width": "42",
+        "height": "80"
+      },
+      {
+        "name": "wingBlue_5",
+        "x": "596",
+        "y": "892",
+        "width": "51",
+        "height": "69"
+      },
+      {
+        "name": "wingBlue_6",
+        "x": "694",
+        "y": "847",
+        "width": "42",
+        "height": "74"
+      },
+      {
+        "name": "wingBlue_7",
+        "x": "675",
+        "y": "134",
+        "width": "43",
+        "height": "83"
+      },
+      {
+        "name": "wingGreen_0",
+        "x": "650",
+        "y": "525",
+        "width": "45",
+        "height": "78"
+      },
+      {
+        "name": "wingGreen_1",
+        "x": "775",
+        "y": "229",
+        "width": "37",
+        "height": "72"
+      },
+      {
+        "name": "wingGreen_2",
+        "x": "809",
+        "y": "527",
+        "width": "26",
+        "height": "84"
+      },
+      {
+        "name": "wingGreen_3",
+        "x": "535",
+        "y": "0",
+        "width": "51",
+        "height": "75"
+      },
+      {
+        "name": "wingGreen_4",
+        "x": "694",
+        "y": "431",
+        "width": "42",
+        "height": "80"
+      },
+      {
+        "name": "wingGreen_5",
+        "x": "525",
+        "y": "251",
+        "width": "51",
+        "height": "69"
+      },
+      {
+        "name": "wingGreen_6",
+        "x": "695",
+        "y": "511",
+        "width": "42",
+        "height": "74"
+      },
+      {
+        "name": "wingGreen_7",
+        "x": "655",
+        "y": "764",
+        "width": "43",
+        "height": "83"
+      },
+      {
+        "name": "wingRed_0",
+        "x": "809",
+        "y": "712",
+        "width": "26",
+        "height": "84"
+      },
+      {
+        "name": "wingRed_1",
+        "x": "768",
+        "y": "0",
+        "width": "37",
+        "height": "72"
+      },
+      {
+        "name": "wingRed_2",
+        "x": "600",
+        "y": "300",
+        "width": "51",
+        "height": "75"
+      },
+      {
+        "name": "wingRed_3",
+        "x": "698",
+        "y": "715",
+        "width": "42",
+        "height": "80"
+      },
+      {
+        "name": "wingRed_4",
+        "x": "586",
+        "y": "75",
+        "width": "51",
+        "height": "69"
+      },
+      {
+        "name": "wingRed_5",
+        "x": "718",
+        "y": "123",
+        "width": "42",
+        "height": "74"
+      },
+      {
+        "name": "wingRed_6",
+        "x": "653",
+        "y": "681",
+        "width": "43",
+        "height": "83"
+      },
+      {
+        "name": "wingRed_7",
+        "x": "651",
+        "y": "286",
+        "width": "45",
+        "height": "78"
+      },
+      {
+        "name": "wingYellow_0",
+        "x": "650",
+        "y": "603",
+        "width": "45",
+        "height": "78"
+      },
+      {
+        "name": "wingYellow_1",
+        "x": "760",
+        "y": "120",
+        "width": "37",
+        "height": "72"
+      },
+      {
+        "name": "wingYellow_2",
+        "x": "809",
+        "y": "353",
+        "width": "26",
+        "height": "84"
+      },
+      {
+        "name": "wingYellow_3",
+        "x": "576",
+        "y": "150",
+        "width": "51",
+        "height": "75"
+      },
+      {
+        "name": "wingYellow_4",
+        "x": "726",
+        "y": "0",
+        "width": "42",
+        "height": "80"
+      },
+      {
+        "name": "wingYellow_5",
+        "x": "525",
+        "y": "182",
+        "width": "51",
+        "height": "69"
+      },
+      {
+        "name": "wingYellow_6",
+        "x": "695",
+        "y": "585",
+        "width": "42",
+        "height": "74"
+      },
+      {
+        "name": "wingYellow_7",
+        "x": "651",
+        "y": "364",
+        "width": "43",
+        "height": "83"
+      }
+    ]
+  }
+}

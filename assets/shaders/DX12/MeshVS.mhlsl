@@ -1,0 +1,39 @@
+#include "MeshRS.hlsli"
+
+cbuffer VertexConstants : register(b0)
+{
+    float4x4 MVP;
+    float4x4 V;
+    float4x4 M;
+    float4x4 MIT;
+}
+
+// Outputs to the pixel shader
+struct VertexOut
+{
+    float4 position : SV_Position;
+    float3 frag_normal : NORMAL;
+    float2 frag_tex_coord : TEXCOORD0;
+    float3 frag_pos_world : TEXCOORD1;
+};
+
+[RootSignature(Mesh_RootSig)]
+VertexOut MeshVS(float3 in_position : POSITION,
+              float3 in_normal : NORMAL,
+              float2 in_tex_coord : TEXCOORD0)
+{
+    VertexOut OUT;
+
+    // World space position
+    OUT.frag_pos_world = mul(M, float4(in_position, 1.0));
+
+    // perspective transformed position
+    OUT.position = mul(MVP, float4(in_position, 1.0));
+
+    // Flip tex coords the right way up
+    OUT.frag_tex_coord = in_tex_coord;
+
+    OUT.frag_normal = normalize((mul(MIT, float4(in_normal, 0.0))).xyz);
+
+    return OUT;
+}

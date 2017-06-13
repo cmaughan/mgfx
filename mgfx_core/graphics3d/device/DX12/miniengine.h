@@ -1,0 +1,21 @@
+#pragma once
+
+#include "miniengine/TextureManager.h"
+#include "miniengine/GpuTimeManager.h"
+#include "miniengine/TextureManager.h"
+#include "miniengine/GraphicsCore.h"
+#include "miniengine/BufferManager.h"
+#include "miniengine/ColorBuffer.h"
+#include "miniengine/SamplerManager.h"
+#include "miniengine/DescriptorHeap.h"
+#include "miniengine/CommandContext.h"
+#include "miniengine/CommandListManager.h"
+#include "miniengine/DynamicUploadBuffer.h"
+#include "miniengine/RootSignature.h"
+#include "miniengine/CommandSignature.h"
+#include "miniengine/d3dx12.h"
+#include "miniengine/GraphicsCommon.h"
+
+#include "miniengine/CompiledShaders/ScreenQuadVS.h"
+#include "miniengine/CompiledShaders/PresentSDRPS.h"
+#include "miniengine/CompiledShaders/BufferCopyPS.h"
