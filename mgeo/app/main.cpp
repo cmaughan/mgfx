@@ -1,10 +1,12 @@
 #include "mgeo_app.h"
 #include "tclap/CmdLine.h"
 
+#include <file/media_manager.h>
 #include "load_assimp.h"
 
+
 INITIALIZE_EASYLOGGINGPP
-    
+
 bool ReadCommandLine(int argc, char** argv, int& exitCode)
 {
     try
@@ -24,17 +26,19 @@ bool ReadCommandLine(int argc, char** argv, int& exitCode)
         {
             cmd.parse(argc, argv);
         }
-    
+
         MGeoSettings::Instance().SetVerbose(verboseArg.getValue());
         if (generateTangentsArg.isSet())
         {
             MGeoSettings::Instance().SetGenerateTangents(generateTangentsArg.getValue());
         }
-    
-        fs::path inputPath(SDL_GetBasePath());
-        MGeoSettings::Instance().SetInputPath(inputPath / nameArg.getValue());
+
+        fs::path rootPath(SDL_GetBasePath());
+        auto inputPath = MediaManager::Instance().FindAsset(nameArg.getValue().c_str(), MediaType::Model | MediaType::Local, &rootPath);
+
+        MGeoSettings::Instance().SetInputPath(inputPath);
     }
-    catch(TCLAP::ArgException &e)  // catch any exceptions
+    catch (TCLAP::ArgException &e)  // catch any exceptions
     {
         std::ostringstream strError;
         strError << e.argId() << " : " << e.error();
@@ -52,39 +56,49 @@ bool ReadCommandLine(int argc, char** argv, int& exitCode)
 
 int main(int argc, char** argv)
 {
+    int exitCode = 0;
+
     fs::path basePath = SDL_GetBasePath();
     el::Configurations conf((basePath / "logger.conf").string().c_str());
     el::Loggers::reconfigureAllLoggers(conf);
-
-    int exitCode = 0;
     if (!ReadCommandLine(argc, argv, exitCode))
     {
         return exitCode;
     }
 
-    LOG(INFO) << "Loading : " << MGeoSettings::Instance().GetInputPath().string();
-
-    exitCode = 0;
-    flatbuffers::FlatBufferBuilder builder;
-    if (MGeo::LoadAssimp(MGeoSettings::Instance().GetInputPath(), builder))
+    try
     {
-        fs::path outPath = MGeoSettings::Instance().GetInputPath();
-        outPath.replace_extension(".mmesh");
+        LOG(INFO) << "Loading : " << MGeoSettings::Instance().GetInputPath().string();
 
-        if (FileUtils::WriteFile(outPath, builder.GetBufferPointer(), builder.GetSize()))
+        flatbuffers::FlatBufferBuilder builder;
+        if (MGeo::LoadAssimp(MGeoSettings::Instance().GetInputPath(), builder))
         {
-            LOG(INFO) << "Wrote: " << outPath.string() << ", size: " << builder.GetSize();
+            fs::path outPath = MGeoSettings::Instance().GetInputPath();
+            outPath.replace_extension(".mmesh");
+
+            if (FileUtils::WriteFile(outPath, builder.GetBufferPointer(), builder.GetSize()))
+            {
+                LOG(INFO) << "Wrote: " << outPath.string() << ", size: " << builder.GetSize();
+            }
+            else
+            {
+                LOG(ERROR) << "Failed to write to: " << outPath.string();
+                exitCode = 1;
+            }
         }
         else
         {
-            LOG(ERROR) << "Failed to write to: " << outPath.string();
+            LOG(INFO) << "Failed to load file: " << MGeoSettings::Instance().GetInputPath().string();
             exitCode = 1;
         }
     }
-    else
+    catch (fs::filesystem_error& err)
     {
-        LOG(INFO) << "Failed to load file: " << MGeoSettings::Instance().GetInputPath().string();
-        exitCode = 1;
+        LOG(ERROR) << err.what();
+    }
+    catch (std::exception& err)
+    {
+        LOG(ERROR) << err.what();
     }
 
     el::Loggers::flushAll();

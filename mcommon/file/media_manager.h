@@ -7,6 +7,7 @@ enum : uint32_t
     Texture = (1 << 0),
     Model   = (1 << 1),
     Shader  = (1 << 2),
+    Local = (1 << 3),
     All = (0xFFFFFFFF)
 };
 }

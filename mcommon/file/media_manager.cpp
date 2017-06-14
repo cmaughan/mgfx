@@ -113,6 +113,16 @@ fs::path MediaManager::FindAssetInternal(const char* pszPath, uint32_t mediaType
         return fs::path();
     };
 
+    if (mediaType & MediaType::Local)
+    {
+        fs::path found(searchPath);
+        if (fs::exists(found))
+        {
+            LOG(DEBUG) << "Found local file: " << found.string();
+            return fs::canonical(fs::absolute(found));
+        }
+    }
+
 
     if (mediaType & MediaType::Texture)
     {
@@ -174,6 +184,7 @@ fs::path MediaManager::FindAssetInternal(const char* pszPath, uint32_t mediaType
             return found;
         }
     }
+
 
     LOG(DEBUG) << "** File not found: " << searchPath.string();
     return fs::path();

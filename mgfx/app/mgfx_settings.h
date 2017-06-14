@@ -28,7 +28,7 @@ public:
 private:
     std::vector<std::shared_ptr<MgfxRender>> m_renderers;
     MgfxRender* m_pCurrentRenderer = nullptr;
-    Device m_device;
-    bool m_bConsole;
+    Device m_device = Device::GL;
+    bool m_bConsole = false;
 };
 

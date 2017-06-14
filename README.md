@@ -158,6 +158,9 @@ The MiniEngine forms the basis of the DX12 renderer.
 A shout-out to this 'Server Application Library' on github.  An excellent example of how to setup clean CI build scripts.
 I learned a few CMake tricks along the way too.  
 
+[Shooter Assets](http://kenney.nl/assets/space-shooter-redux)
+This sprite map has been used in the asteroids demo.
+
 Libraries
 -----------
 These libraries are in a folder called 'm3rdparty'.  They are useful for various projects.

@@ -80,7 +80,9 @@ bool LoadAssimp(fs::path filePath, flatbuffers::FlatBufferBuilder& builder)
         const aiMaterial *srcMat = scene->mMaterials[materialIndex];
 
         aiString matName;
-        srcMat->Get(AI_MATKEY_NAME, matName);
+#define GET_MAT_VALUE(key, value) { if (srcMat->Get(key, value) != aiReturn_SUCCESS) LOG(WARNING) << "No Material property: " << #key; }
+
+        GET_MAT_VALUE(AI_MATKEY_NAME, matName);
 
         if (MGeoSettings::Instance().GetVerbose())
         {
@@ -107,24 +109,24 @@ bool LoadAssimp(fs::path filePath, flatbuffers::FlatBufferBuilder& builder)
         aiString texAmbientPath;
         aiString texDisplacementPath;
 
-        srcMat->Get(AI_MATKEY_COLOR_DIFFUSE, diffuse);
-        srcMat->Get(AI_MATKEY_COLOR_SPECULAR, specular);
-        srcMat->Get(AI_MATKEY_COLOR_AMBIENT, ambient);
-        srcMat->Get(AI_MATKEY_COLOR_EMISSIVE, emissive);
-        srcMat->Get(AI_MATKEY_COLOR_TRANSPARENT, transparent);
-        srcMat->Get(AI_MATKEY_OPACITY, opacity);
-        srcMat->Get(AI_MATKEY_SHININESS, shininess);
-        srcMat->Get(AI_MATKEY_SHININESS_STRENGTH, specularStrength);
-        srcMat->Get(AI_MATKEY_TEXTURE(aiTextureType_DIFFUSE, 0), texDiffusePath);
-        srcMat->Get(AI_MATKEY_TEXTURE(aiTextureType_SPECULAR, 0), texSpecularPath);
-        srcMat->Get(AI_MATKEY_TEXTURE(aiTextureType_EMISSIVE, 0), texEmissivePath);
-        srcMat->Get(AI_MATKEY_TEXTURE(aiTextureType_NORMALS, 0), texNormalPath);
-        srcMat->Get(AI_MATKEY_TEXTURE(aiTextureType_LIGHTMAP, 0), texLightmapPath);
-        srcMat->Get(AI_MATKEY_TEXTURE(aiTextureType_REFLECTION, 0), texReflectionPath);
-        srcMat->Get(AI_MATKEY_TEXTURE(aiTextureType_HEIGHT, 0), texHeightPath);
-        srcMat->Get(AI_MATKEY_TEXTURE(aiTextureType_DISPLACEMENT, 0), texDisplacementPath);
-        srcMat->Get(AI_MATKEY_TEXTURE(aiTextureType_SHININESS, 0), texShinyPath);
-        srcMat->Get(AI_MATKEY_TEXTURE(aiTextureType_AMBIENT, 0), texAmbientPath);
+        GET_MAT_VALUE(AI_MATKEY_COLOR_DIFFUSE, diffuse);
+        GET_MAT_VALUE(AI_MATKEY_COLOR_SPECULAR, specular);
+        GET_MAT_VALUE(AI_MATKEY_COLOR_AMBIENT, ambient);
+        GET_MAT_VALUE(AI_MATKEY_COLOR_EMISSIVE, emissive);
+        GET_MAT_VALUE(AI_MATKEY_COLOR_TRANSPARENT, transparent);
+        GET_MAT_VALUE(AI_MATKEY_OPACITY, opacity);
+        GET_MAT_VALUE(AI_MATKEY_SHININESS, shininess);
+        GET_MAT_VALUE(AI_MATKEY_SHININESS_STRENGTH, specularStrength);
+        GET_MAT_VALUE(AI_MATKEY_TEXTURE(aiTextureType_DIFFUSE, 0), texDiffusePath);
+        GET_MAT_VALUE(AI_MATKEY_TEXTURE(aiTextureType_SPECULAR, 0), texSpecularPath);
+        GET_MAT_VALUE(AI_MATKEY_TEXTURE(aiTextureType_EMISSIVE, 0), texEmissivePath);
+        GET_MAT_VALUE(AI_MATKEY_TEXTURE(aiTextureType_NORMALS, 0), texNormalPath);
+        GET_MAT_VALUE(AI_MATKEY_TEXTURE(aiTextureType_LIGHTMAP, 0), texLightmapPath);
+        GET_MAT_VALUE(AI_MATKEY_TEXTURE(aiTextureType_REFLECTION, 0), texReflectionPath);
+        GET_MAT_VALUE(AI_MATKEY_TEXTURE(aiTextureType_HEIGHT, 0), texHeightPath);
+        GET_MAT_VALUE(AI_MATKEY_TEXTURE(aiTextureType_DISPLACEMENT, 0), texDisplacementPath);
+        GET_MAT_VALUE(AI_MATKEY_TEXTURE(aiTextureType_SHININESS, 0), texShinyPath);
+        GET_MAT_VALUE(AI_MATKEY_TEXTURE(aiTextureType_AMBIENT, 0), texAmbientPath);
 
         if (MGeoSettings::Instance().GetVerbose())
         {

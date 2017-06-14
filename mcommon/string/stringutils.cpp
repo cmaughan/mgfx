@@ -23,7 +23,7 @@ std::vector<std::string> Split(std::string s, const char delimiter)
     
     std::vector<std::string> output;
     
-    while (end <= std::string::npos)
+    while (end < std::string::npos)
     {
         output.emplace_back(s.substr(start, end - start));
         

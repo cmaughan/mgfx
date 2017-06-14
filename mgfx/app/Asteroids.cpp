@@ -12,6 +12,12 @@
 
 #include <glm/gtx/vector_angle.hpp>
 
+// This is a simple demo of showing sprites on the screen from a loaded sprite map
+// A simple physical simulation manages the velocities of objects and their collisions
+// TODO: 
+// 'Game Levels'
+// Oriented rectangle collisions
+// Expose more game parameters in the UI
 using namespace Mgfx;
 using namespace nlohmann;
 
@@ -375,8 +381,14 @@ void Asteroids::AddExplosion(const glm::vec3& position, float duration)
 
 void Asteroids::Restart()
 {
+    // Entity management could be better!
     RemoveEntity(m_pShip);
     RemoveEntity(m_pUFO);
+
+    while (!m_allEntities[EntityType::Star].empty())
+    {
+        RemoveEntity(*m_allEntities[EntityType::Star].begin());
+    }
 
     while (!m_boulders.empty())
     {
@@ -390,7 +402,7 @@ void Asteroids::Restart()
     {
         AddBoulder();
     }
-
+    
     for (int i = 0; i < 20; i++)
     {
         AddStar();
@@ -431,13 +443,13 @@ void Asteroids::AddToWindow(Mgfx::Window* pWindow)
             {
                 memcpy(textureData.LinePtr(y, 0), image + y * sizeof(glm::u8vec4) * w, w * sizeof(glm::u8vec4));
             }
-            stbi_image_free(image);
         }
+        stbi_image_free(image);
     }
     pWindow->GetDevice()->UpdateTexture(quad);
 
     auto pWindowData = GetWindowData<ShooterWindowData>(pWindow);
-    pWindowData->AddGeometry(10000 * sizeof(GeometryVertex), 10000 * sizeof(uint32_t));
+    pWindowData->AddGeometry(100000 * sizeof(GeometryVertex), 100000 * sizeof(uint32_t));
     pWindowData->textureQuad = quad;
     pWindowData->textureSize = glm::uvec2(w, h);
 
@@ -605,7 +617,8 @@ void Asteroids::StepPhysics()
         }
     }
 
-    if (m_gameState != GameState::Playing)
+    if (m_gameState != GameState::Playing &&
+        m_gameState != GameState::Spawning)
     {
         // No colllisions at the end of the game
         return;
@@ -827,8 +840,8 @@ void Asteroids::Render(Mgfx::Window* pWindow)
 
     uint32_t vertexOffset = 0;
     uint32_t indexOffset = 0;
-    auto pVertices = (GeometryVertex*)pWindowData->GetVB()->Map(1000, sizeof(GeometryVertex), vertexOffset);
-    auto pIndices = (uint32_t*)pWindowData->GetIB()->Map(1000, sizeof(uint32_t), indexOffset);
+    auto pVertices = (GeometryVertex*)pWindowData->GetVB()->Map(10000, sizeof(GeometryVertex), vertexOffset);
+    auto pIndices = (uint32_t*)pWindowData->GetIB()->Map(10000, sizeof(uint32_t), indexOffset);
 
     auto pStartIndices = pIndices;
     auto pStartVertices = pVertices;
