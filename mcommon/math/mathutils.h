@@ -5,18 +5,23 @@ float SmoothStep(float val);
 template<class T>
 bool IsRectEmpty(const T& rect)
 {
-	return (rect.z == 0 || rect.w == 0);
+    return (rect.z == 0 || rect.w == 0);
 }
 
 template<typename T, typename P> 
 bool RectContains(const T& rect, const P& point)
 {
-	return ((rect.x <= point.x && (rect.x + rect.z) >= point.x) &&
-		(rect.y <= point.y && (rect.y + rect.w) >= point.y));
+    return ((rect.x <= point.x && (rect.x + rect.z) >= point.x) &&
+        (rect.y <= point.y && (rect.y + rect.w) >= point.y));
 }
 
+double GetRand01();
+
 template<typename T>
-inline T RandRange(T begin, T end) { return T(((rand() / float(RAND_MAX)) * (end - begin)) + begin); }
+inline T RandRange(T begin, T end) 
+{ 
+    return T((GetRand01() * (end - begin)) + begin);
+}
 
 void GetBounds(const glm::vec3* coords, uint32_t count, glm::vec3& min, glm::vec3& max);
 glm::quat QuatFromVectors(glm::vec3 u, glm::vec3 v);
@@ -29,7 +34,7 @@ glm::vec4 Desaturate(const glm::vec4& col);
 template<typename T>
 T Clamp(const T &val, const T &min, const T &max)
 {
-	return std::max(min, std::min(max, val));
+    return std::max(min, std::min(max, val));
 }
 
 #define IM_VEC2_CLASS_EXTRA                                                 \

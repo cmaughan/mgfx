@@ -2,7 +2,12 @@
 #include "ui_manager.h"
 
 // Statics
-uint64_t UIMessage::CurrentID = 0;
+uint64_t UIMessage::CurrentID = 1;
+
+namespace
+{
+uint64_t InvalidMessageID = 0;
+}
 
 void UIMessage::Log()
 {
@@ -14,10 +19,18 @@ void UIMessage::Log()
         */
 
     std::ostringstream str;
-    if (!m_file.empty())
+    try
     {
-        str << m_file.string();
+        if (!m_file.empty())
+        {
+            str << m_file.string();
+        }
     }
+    catch (fs::filesystem_error&)
+    {
+        // Ignore file errors
+    }
+
     if (m_line != -1)
     {
         str << "(" << m_line;
@@ -58,17 +71,17 @@ uint64_t UIManager::AddMessage(uint32_t type, const std::string& message, const 
 {
     auto spMessage = std::make_shared<UIMessage>(type, message, file, line, column);
     spMessage->Log();
-    if (type & MessageType::Task || 
+    if (type & MessageType::Task ||
         !file.empty())
     {
         m_taskMessages[spMessage->m_id] = spMessage;
     }
-   
+
     if (!file.empty())
     {
         m_fileMessages[spMessage->m_file].push_back(spMessage->m_id);
     }
-   
+
     if (type & MessageType::System)
     {
         SDL_MessageBoxButtonData button;

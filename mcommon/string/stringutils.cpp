@@ -27,9 +27,6 @@ std::vector<std::string> Split(std::string s, const char delimiter)
     {
         output.emplace_back(s.substr(start, end - start));
         
-        if (end == std::string::npos)
-            break;
-        
         start = end + 1;
         end = s.find_first_of(delimiter, start);
     }

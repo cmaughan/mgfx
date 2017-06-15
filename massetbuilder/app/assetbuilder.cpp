@@ -255,6 +255,10 @@ bool AssetBuilder::CompileAssets()
         {
             LOG(ERROR) << err.what();
         }
+        catch (std::exception& err)
+        {
+            LOG(ERROR) << err.what();
+        }
     }
     std::string recordString = buildRecord.dump();
     FileUtils::WriteFile(targetRecordFile, recordString.c_str(), recordString.size());

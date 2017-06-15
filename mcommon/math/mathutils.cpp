@@ -1,6 +1,15 @@
 #include "mcommon.h"
 #include "mathutils.h"
 
+static std::random_device rd;
+static std::mt19937 mt(rd());
+static std::uniform_real_distribution<double> dist(0.0, 1.0);
+
+double GetRand01()
+{
+    return dist(mt);
+}
+
 /** Build a unit quaternion representing the rotation
  * from u to v. The input vectors need not be normalised. */
 glm::quat QuatFromVectors(glm::vec3 u, glm::vec3 v)
