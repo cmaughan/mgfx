@@ -15,23 +15,22 @@ std::string ReplaceString(std::string subject, const std::string& search,
     return subject;
 }
 
-std::vector<std::string> Split(std::string s, const char delimiter)
+// String split with multiple delims
+// https://stackoverflow.com/a/7408245/18942
+std::vector<std::string> Split(const std::string& text, const std::string& delims)
 {
-    Trim(s);
-    size_t start = 0;
-    size_t end = s.find_first_of(delimiter);
-    
-    std::vector<std::string> output;
-    
-    while (end < std::string::npos)
+    std::vector<std::string> tokens;
+    std::size_t start = text.find_first_not_of(delims), end = 0;
+
+    while((end = text.find_first_of(delims, start)) != std::string::npos)
     {
-        output.emplace_back(s.substr(start, end - start));
-        
-        start = end + 1;
-        end = s.find_first_of(delimiter, start);
+        tokens.push_back(text.substr(start, end - start));
+        start = text.find_first_not_of(delims, end);
     }
-    
-    return output;
+    if(start != std::string::npos)
+        tokens.push_back(text.substr(start));
+
+    return tokens;
 }
     
 // CM: I can't remember where this came from; please let me know if you do!

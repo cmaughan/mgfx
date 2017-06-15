@@ -104,7 +104,7 @@ void DXCompiler::Build(BuildArtifact& artifact)
 
         // Try to parse the DX error string into file, line, column and message
         // Exception should catch silly mistakes.
-        auto errors = StringUtils::Split(output, '\n');
+        auto errors = StringUtils::Split(output, "\n");
         for (auto error : errors)
         {
             std::string fileName = artifact.sourceFile.string();
@@ -125,14 +125,14 @@ void DXCompiler::Build(BuildArtifact& artifact)
                         fileName = StringUtils::Trim(error.substr(0, bracketPos));
                         message = StringUtils::Trim(error.substr(lastBracket + 2, error.size() - lastBracket + 2));
                         std::string numbers = StringUtils::Trim(error.substr(bracketPos, lastBracket - bracketPos), "( )");
-                        auto numVec = StringUtils::Split(numbers, ',');
+                        auto numVec = StringUtils::Split(numbers, ",");
                         if (!numVec.empty())
                         {
                             line = std::stoi(numVec[0]);
                         }
                         if (numVec.size() > 1)
                         {
-                            auto columnVec = StringUtils::Split(numVec[1], '-');
+                            auto columnVec = StringUtils::Split(numVec[1], "-");
                             if (!columnVec.empty())
                             {
                                 range.start = std::stoi(columnVec[0]);

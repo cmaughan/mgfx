@@ -5,7 +5,7 @@ namespace StringUtils
 
 
 std::string ReplaceString(std::string subject, const std::string& search, const std::string& replace);
-std::vector<std::string> Split(std::string s, const char delimiter);
+std::vector<std::string> Split(const std::string& text, const std::string& delims);
 
 // trim from beginning of string (left)
 inline std::string& LTrim(std::string& s, const char* t = " \t\n\r\f\v")

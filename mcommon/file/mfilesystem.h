@@ -137,7 +137,7 @@ public:
     std::vector<std::string>::const_iterator begin()
     {
         std::string can = StringUtils::ReplaceString(m_strPath, "\\", "/");
-        m_components = StringUtils::Split(can, '/');
+        m_components = StringUtils::Split(can, "/");
         return m_components.begin();
     }
     
