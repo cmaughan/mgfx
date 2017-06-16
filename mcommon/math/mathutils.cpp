@@ -3,10 +3,28 @@
 
 static std::random_device rd;
 static std::mt19937 mt(rd());
-static std::uniform_real_distribution<double> dist(0.0, 1.0);
 
-double GetRand01()
+double RandRange(double min, double max)
 {
+    std::uniform_real_distribution<double> dist(min, std::nextafter(max, DBL_MAX));
+    return dist(mt);
+}
+
+float RandRange(float min, float max)
+{
+    std::uniform_real_distribution<float> dist(min, std::nextafter(max, FLT_MAX));
+    return dist(mt);
+}
+
+uint32_t RandRange(uint32_t min, uint32_t max)
+{
+    std::uniform_int_distribution<uint32_t> dist(min, max);
+    return dist(mt);
+}
+
+int32_t RandRange(int32_t min, int32_t max)
+{
+    std::uniform_int_distribution<int32_t> dist (min, max);
     return dist(mt);
 }
 

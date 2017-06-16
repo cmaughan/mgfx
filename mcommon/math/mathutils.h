@@ -15,13 +15,10 @@ bool RectContains(const T& rect, const P& point)
         (rect.y <= point.y && (rect.y + rect.w) >= point.y));
 }
 
-double GetRand01();
-
-template<typename T>
-inline T RandRange(T begin, T end) 
-{ 
-    return T((GetRand01() * (end - begin)) + begin);
-}
+double RandRange(double begin, double end);
+float RandRange(float begin, float end);
+uint32_t RandRange(uint32_t min, uint32_t max);
+int32_t RandRange(int32_t begin, int32_t end);
 
 void GetBounds(const glm::vec3* coords, uint32_t count, glm::vec3& min, glm::vec3& max);
 glm::quat QuatFromVectors(glm::vec3 u, glm::vec3 v);
