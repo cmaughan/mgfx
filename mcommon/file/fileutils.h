@@ -1,8 +1,9 @@
 #pragma once
 
-#if TARGET_MAC
+/*#if TARGET_MAC
 #undef PROJECT_CPP_FILESYSTEM
 #endif
+*/
 
 #ifdef PROJECT_CPP_FILESYSTEM
 #include <experimental/filesystem>
