@@ -26,6 +26,7 @@ inline size_t Utf8Length(const char* s, char*& pEnd)
 
 std::string ReplaceString(std::string subject, const std::string& search, const std::string& replace);
 std::vector<std::string> Split(const std::string& text, const std::string& delims);
+std::vector<std::string> SplitLines(const std::string& text);
 
 // trim from beginning of string (left)
 inline std::string& LTrim(std::string& s, const char* t = " \t\n\r\f\v")

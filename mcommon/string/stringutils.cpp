@@ -40,7 +40,12 @@ std::vector<std::string> Split(const std::string& text, const std::string& delim
 
     return tokens;
 }
-    
+
+std::vector<std::string> SplitLines(const std::string& text)
+{
+    return Split(text, "\r\n");
+}
+
 // CM: I can't remember where this came from; please let me know if you do!
 // I know it is open source, but not sure who wrote it.
 uint32_t murmur_hash(const void * key, int len, uint32_t seed)
