@@ -162,7 +162,7 @@ void GeometryTest::Render(Mgfx::Window* pWindow)
 
     m_totalVerts += m_numQuads * verticesPerQuad;
 
-    auto diff = timer.GetDelta(TimerSample::None);
+    auto diff = timer.GetDelta();
     if (diff > 2.0f)
     {
         m_verticesPerSecond = m_totalVerts / diff;

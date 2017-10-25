@@ -224,6 +224,14 @@ int main(int argc, char** argv)
     el::Configurations conf((basePath / "logger.conf").string().c_str());
     el::Loggers::reconfigureAllLoggers(conf);
 
+    basePath = basePath / "assets";
+    basePath = fs::absolute(basePath);
+    if (fs::exists(basePath))
+    {
+        basePath = fs::canonical(basePath);
+    }
+    MediaManager::Instance().SetAssetPath(basePath);
+
     int exitCode = 0;
     if (!ReadCommandLine(argc, argv, exitCode))
     {
@@ -236,6 +244,7 @@ int main(int argc, char** argv)
         LOG(ERROR) << SDL_GetError();
         return -1;
     }
+
 
     MgfxSettings::Instance().AddRenderer(std::make_shared<Asteroids>());
     MgfxSettings::Instance().AddRenderer(std::make_shared<Sponza>());
@@ -339,6 +348,7 @@ int main(int argc, char** argv)
         }
 
         auto frameDelta = frameTimer.GetDelta();
+        frameTimer.Restart();
 
         // No more events, lets do some drawing
         // Walk the list of windows currently drawing

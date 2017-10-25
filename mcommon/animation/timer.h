@@ -11,11 +11,11 @@ class Timer
 public:
     Timer();
     static Timer& GlobalTimer();
-    float GetTime() const;
 
     void Restart();
 
-    float GetDelta(TimerSample sample = TimerSample::Restart);
+    float GetTime() const;
+    float GetDelta() const;
 
 private:
     int64_t m_startTime;

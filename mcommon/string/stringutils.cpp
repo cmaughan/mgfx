@@ -1,8 +1,16 @@
 #include "mcommon.h"
 #include "stringutils.h"
+#include <algorithm>
 
 namespace StringUtils
 {
+
+std::string toLower(const std::string& str)
+{
+    std::string copy = str;
+    std::transform(copy.begin(),copy.end(),copy.begin(),::tolower);
+    return copy;
+}
 
 std::string ReplaceString(std::string subject, const std::string& search,
     const std::string& replace)
@@ -180,4 +188,16 @@ uint64_t murmur_hash_64(const void * key, uint32_t len, uint64_t seed)
 
     return h;
 }
+
+//https://stackoverflow.com/questions/4804298/how-to-convert-wstring-into-string
+std::string makeStr(const std::wstring& str)
+{
+    using convert_type = std::codecvt_utf8<wchar_t>;
+    std::wstring_convert<convert_type, wchar_t> converter;
+
+    //use converter (.to_bytes: wstr->str, .from_bytes: str->wstr)
+    std::string converted_str = converter.to_bytes(str);
+    return converted_str;
+}
+
 }

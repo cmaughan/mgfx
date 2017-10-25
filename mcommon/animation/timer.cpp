@@ -18,18 +18,15 @@ float Timer::GetTime() const
     return float(time / 1000000.0);
 }
 
+float Timer::GetDelta() const
+{
+    auto now = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+    auto diff = now - m_startTime;
+    return float(diff / 1000000.0);
+}
+
 void Timer::Restart()
 {
     m_startTime = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
 }
 
-float Timer::GetDelta(TimerSample sample)
-{
-    auto now = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
-    auto diff = now - m_startTime;
-    if (sample == TimerSample::Restart)
-    {
-        Restart();
-    }
-    return float(diff / 1000000.0);
-}

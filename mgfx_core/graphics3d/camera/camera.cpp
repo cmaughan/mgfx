@@ -46,7 +46,7 @@ bool Camera::Update()
 
     bool changed = false;
 
-    auto delta = m_timer.GetDelta(TimerSample::None);
+    auto delta = m_timer.GetDelta();
     if (delta >= .001f)
     {
         if (m_orbitDelta != glm::vec2(0.0f))

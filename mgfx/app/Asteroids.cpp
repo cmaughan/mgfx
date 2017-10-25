@@ -518,7 +518,7 @@ void Asteroids::WrapAtBorders()
             // Special handling for UFO - kill it inside boundary
             if (wrapped && entity == m_pUFO)
             {
-                if (m_ufoTimer.GetDelta(TimerSample::None) > properties.UFOLifeTime)
+                if (m_ufoTimer.GetDelta() > properties.UFOLifeTime)
                 {
                     // Force UFO death inside the boundary
                     m_pUFO->death = .1f;
@@ -532,6 +532,7 @@ void Asteroids::WrapAtBorders()
 void Asteroids::HandleInput()
 {
     auto timeDelta = m_inputTimer.GetDelta();
+    m_inputTimer.Restart();
 
     if (m_gameState != GameState::Playing &&
         m_gameState != GameState::Spawning)
@@ -549,7 +550,7 @@ void Asteroids::HandleInput()
         m_pShip->acceleration = glm::vec2(0.0f);
     }
 
-    float angleDelta = std::min(m_keyholdTimer.GetDelta(TimerSample::None) * 2000.0f, 300.0f);
+    float angleDelta = std::min(m_keyholdTimer.GetDelta() * 2000.0f, 300.0f);
     if (ImGui::GetIO().KeysDown[SDLK_a])
     {
         m_pShip->angle -= angleDelta * timeDelta;
@@ -588,7 +589,7 @@ void Asteroids::StepPhysics()
     const float MaxAcceleration = 1000.0f;
     const float MaxVelocity = 1000.0f;
 
-    auto timeDelta = m_physicsTimer.GetDelta(TimerSample::None);
+    auto timeDelta = m_physicsTimer.GetDelta();
 
     // Update physics 50fps
     if (timeDelta < 0.02f)
@@ -776,7 +777,7 @@ void Asteroids::UpdateGameState()
         break;
     case GameState::Spawning:
     {
-        auto delta = m_spawnTimer.GetDelta(TimerSample::None);
+        auto delta = m_spawnTimer.GetDelta();
         if (delta > 3.0f)
         {
             m_gameState = GameState::Playing;
@@ -801,7 +802,7 @@ void Asteroids::UpdateGameState()
     }
 
     // Spawn the UFO if appropriate
-    auto ufoTime = m_ufoTimer.GetDelta(TimerSample::None);
+    auto ufoTime = m_ufoTimer.GetDelta();
     if (m_pUFO == nullptr)
     {
         if (ufoTime > properties.UFOSpawnTime)

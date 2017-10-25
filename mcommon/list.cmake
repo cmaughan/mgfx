@@ -19,6 +19,7 @@ mcommon/file/media_manager.h
 
 mcommon/math/mathutils.h
 mcommon/math/mathutils.cpp
+mcommon/math/rectstack.h
 
 mcommon/string/stringutils.cpp
 mcommon/string/stringutils.h
@@ -33,4 +34,7 @@ mcommon/graphics/primitives2d.cpp
 mcommon/graphics/primitives2d.h
 
 mcommon/mcommon.h
+mcommon/mcommon.cpp
+
 )
+set(MCOMMON_ROOT ${CMAKE_CURRENT_LIST_DIR} CACHE STRING "" FORCE)

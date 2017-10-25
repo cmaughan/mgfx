@@ -1,6 +1,9 @@
 #include "mcommon.h"
 #include "file/media_manager.h"
 #include "file/fileutils.h"
+#include "config_app.h"
+
+std::string g_AppFriendlyName = APPLICATION_NAME;
 
 MediaManager& MediaManager::Instance()
 {
@@ -8,32 +11,68 @@ MediaManager& MediaManager::Instance()
     return manager;
 }
 
-MediaManager::MediaManager()
+bool MediaManager::SetAssetPath(const fs::path& assetPath)
 {
-    fs::path basePath(SDL_GetBasePath());
-    basePath = basePath / "assets";
-    if (fs::exists(basePath))
-    {
-        m_mediaPath = fs::canonical(fs::absolute(basePath));
-    }
-    else
-    {
-        m_mediaPath = fs::canonical(fs::absolute(basePath));
-    }
+    m_documentsPath = FileUtils::GetDocumentsPath() / fs::path(g_AppFriendlyName);
+    m_mediaPath = fs::canonical(fs::absolute(assetPath));
+
     LOG(INFO) << "Media Path: " << m_mediaPath.string();
 
     m_texturePaths.push_back(fs::path("textures"));
     m_shaderPaths.push_back(fs::path("shaders"));
     m_shaderPaths.push_back(fs::path("shaders") / fs::path("GL"));
-    m_shaderPaths.push_back(fs::path("shaders") / fs::path("DX12"));
     m_modelPaths.push_back(fs::path("models"));
+    m_docPaths.push_back(fs::path("documents"));
     m_modelPaths.push_back(fs::path("test") / fs::path("models"));
+
+    m_fontPaths.push_back(fs::path("fonts"));
 
     m_textureExtensions.push_back(".dds");
     m_textureExtensions.push_back(".png");
 
     m_textureSubstringReplacements["_bump"] = "_normal";
+    return true;
+}
 
+bool MediaManager::SetProjectPath(const fs::path& project)
+{
+    if (fs::exists(project))
+    {
+        m_projectPath = fs::canonical(fs::absolute(project));
+        return true;
+    }
+    
+    try
+    {
+        fs::path newPath;
+        if (project.is_relative())
+        {
+            newPath = m_documentsPath / project;
+        }
+        else
+        {
+            newPath = project;
+        }
+
+        if (!fs::exists(newPath))
+        {
+            if (!fs::create_directories(newPath))
+            {
+                return false;
+            }
+        }
+        m_projectPath = fs::canonical(fs::absolute(newPath));
+        return true;
+    }
+    catch (fs::filesystem_error& err)
+    {
+        LOG(ERROR) << err.what();
+    }
+    return false;
+}
+
+MediaManager::MediaManager()
+{
 }
 
 std::string MediaManager::LoadAsset(const char* pszPath, uint32_t mediaType, const fs::path* assetBase)
@@ -175,6 +214,25 @@ fs::path MediaManager::FindAssetInternal(const char* pszPath, uint32_t mediaType
         }
     }
     
+    if (mediaType & MediaType::Document)
+    {
+        fs::path found = searchPaths(parent, searchPath, m_docPaths);
+        if (!found.empty())
+        {
+            LOG(DEBUG) << "Found document: " << found.string();
+            return found;
+        }
+    }
+
+    if (mediaType & MediaType::Font)
+    {
+        fs::path found = searchPaths(parent, searchPath, m_fontPaths);
+        if (!found.empty())
+        {
+            LOG(DEBUG) << "Found font: " << found.string();
+            return found;
+        }
+    }
     if (mediaType & MediaType::Shader)
     {
         fs::path found = searchPaths(parent, searchPath, m_shaderPaths);
@@ -184,7 +242,6 @@ fs::path MediaManager::FindAssetInternal(const char* pszPath, uint32_t mediaType
             return found;
         }
     }
-
 
     LOG(DEBUG) << "** File not found: " << searchPath.string();
     return fs::path();

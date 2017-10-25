@@ -17,4 +17,7 @@ namespace FileUtils
 std::string ReadFile(const fs::path& fileName);
 bool WriteFile(const fs::path& fileName, const void* pData, size_t size);
 fs::path RelativeTo(fs::path from, fs::path to);
+fs::path GetDocumentsPath();
+std::vector<fs::path> GatherFiles(const fs::path& root);
 }
+
