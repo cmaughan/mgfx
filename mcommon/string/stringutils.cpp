@@ -1,6 +1,8 @@
 #include "mcommon.h"
 #include "stringutils.h"
 #include <algorithm>
+#include <codecvt>
+#include <locale>
 
 namespace StringUtils
 {

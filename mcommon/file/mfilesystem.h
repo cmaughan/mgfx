@@ -55,6 +55,11 @@ public:
         return path(name + ext);
     }
 
+    bool is_relative() const
+    {
+	return !is_absolute();
+    }
+    
     bool is_absolute() const
     {
         return false;
