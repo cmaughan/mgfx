@@ -7,7 +7,6 @@
 #include "ui/camera_manipulator.h"
 #include "file/media_manager.h"
 #include "Sponza.h"
-#include "imgui/imgui_scintilla.h"
 
 using namespace Mgfx;
 
@@ -96,26 +95,6 @@ void Sponza::DrawGUI(Mgfx::Window* pWindow)
             m_spScene->SetClearColor(clear_color);
         }
     }
-
-#if PROJECT_M3RDPARTY_SCINTILLA
-    // Work in progress support for scintilla editor
-    ImVec2 size(300, 500);
-    static bool editorOpen = true;
-    static ScintillaEditor* pEditor = nullptr;
-    bool firstRun = pEditor == nullptr ? true : false;
-    pEditor = ImGuiScintilla("Shader", &editorOpen, size);
-
-    if (firstRun)
-    {
-        fs::path shader = MediaManager::Instance().FindAsset("StandardShading.vertexshader", MediaType::Shader);
-        if (!shader.empty())
-        {
-            auto strFile = ReadFile(shader);
-            pEditor->command(SCI_ADDTEXT, strFile.length(), uintptr_t(strFile.c_str()));
-        }
-    }
-#endif
-
 }
 
 void Sponza::Render(Mgfx::Window* pWindow)

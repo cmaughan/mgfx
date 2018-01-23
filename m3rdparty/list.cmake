@@ -1,4 +1,3 @@
-option (PROJECT_M3RDPARTY_SCINTILLA "Compile Scintilla" OFF)
 option (PROJECT_M3RDPARTY_ZIP "Compile Zip decompression" OFF)
 option (PROJECT_CPP_FILESYSTEM "Use CPP 14 Filesystem - experimental" ON)
 
@@ -31,26 +30,6 @@ file(GLOB ZIP_SOURCE_PC
 set (ZIP_SOURCE ${ZIP_SOURCE} ${ZIP_SOURCE_PC})
 ENDIF()
 ENDIF()
-
-# Scintilla editor
-if (PROJECT_M3RDPARTY_SCINTILLA)
-file(GLOB SCINTILLA_SOURCE
-    m3rdparty/scintilla/src/*.cxx
-    m3rdparty/scintilla/lexlib/*.cxx
-    m3rdparty/scintilla/lexers/*.cxx
-    m3rdparty/scintilla/src/*.h
-    m3rdparty/scintilla/include/*.h
-    m3rdparty/imgui/imgui_scintilla.cpp
-    m3rdparty/imgui/imgui_scintilla.h
-)
-IF (TARGET_PC)
-#SET (SCINTILLA_SOURCE ${SCINTILLA_SOURCE} m3rdparty/scintilla/win32/PlatWin.cxx)
-ENDIF()
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DSCI_LEXER -DSCI_NAMESPACE")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DSCI_LEXER -DSCI_NAMESPACE")
-INCLUDE_DIRECTORIES(m3rdparty/scintilla/src)
-ENDIF()
-
 
 # GLM
 file(GLOB GLM_SOURCE
@@ -92,7 +71,6 @@ LIST(APPEND M3RDPARTY_SOURCE
     ${GL_SOURCE}
     ${MPC_SOURCE}
     ${ZIP_SOURCE}
-    ${SCINTILLA_SOURCE}
     ${GLM_SOURCE} ${GLM_INCLUDE}
     m3rdparty/m3rdparty.h
     )
@@ -106,9 +84,7 @@ LIST(APPEND M3RDPARTY_INCLUDE
     m3rdparty/tclap/include
     m3rdparty/gli
     m3rdparty/sdl/include
-    m3rdparty/scintilla/include
     m3rdparty/sdl
-    m3rdparty/scintilla/lexlib
     m3rdparty/googletest
     )
 
@@ -167,7 +143,6 @@ SOURCE_GROUP ("m3rdparty\\googletest" REGULAR_EXPRESSION "(googlete)+.*")
 SOURCE_GROUP ("m3rdparty\\glm" REGULAR_EXPRESSION "(glm)+.*") 
 SOURCE_GROUP ("m3rdparty\\easylogging" REGULAR_EXPRESSION "(easylo)+.*")
 SOURCE_GROUP ("m3rdparty\\imgui" REGULAR_EXPRESSION "(imgui)+.*")
-SOURCE_GROUP ("m3rdparty\\scintilla" REGULAR_EXPRESSION "(scintilla)+.*")
 SOURCE_GROUP ("m3rdparty\\GL" REGULAR_EXPRESSION "(GL)+.*")
 SOURCE_GROUP ("m3rdparty\\zip" REGULAR_EXPRESSION "(zip)+.*")
 SOURCE_GROUP ("m3rdparty\\mpc" REGULAR_EXPRESSION "(mpc)+.*")
