@@ -82,7 +82,10 @@ fs::path GetDocumentsPath()
     HRESULT hr = SHGetKnownFolderPath(FOLDERID_Documents, 0, NULL, &path);
     if (SUCCEEDED(hr)) 
     {
-        fs::path ret = StringUtils::makeStr(path);
+#define MAXLEN 512
+        char tx[MAXLEN];
+        wcstombs(tx, path, MAXLEN);
+        fs::path ret(tx);
         CoTaskMemFree(path);
         return ret;
     }

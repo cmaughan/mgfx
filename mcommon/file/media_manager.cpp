@@ -21,6 +21,7 @@ bool MediaManager::SetAssetPath(const fs::path& assetPath)
     m_texturePaths.push_back(fs::path("textures"));
     m_shaderPaths.push_back(fs::path("shaders"));
     m_shaderPaths.push_back(fs::path("shaders") / fs::path("GL"));
+    m_shaderPaths.push_back(fs::path("shaders") / fs::path("DX12"));
     m_modelPaths.push_back(fs::path("models"));
     m_docPaths.push_back(fs::path("documents"));
     m_modelPaths.push_back(fs::path("test") / fs::path("models"));
